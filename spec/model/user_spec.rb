@@ -9,6 +9,7 @@ RSpec.describe User, type: :model do
     )
   end
   before { subject.save }
+
   context '#name' do
     it 'name should be present' do
       subject.name = nil
@@ -45,17 +46,14 @@ RSpec.describe User, type: :model do
 
   context '#latest_posts' do
     it 'should return the latest posts of the user' do
-      Post.create(author: subject, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
-      Post.create(author: subject, title: 'Hello', text: 'This is my second post', comments_counter: 0,
-                  likes_counter: 0)
-      Post.create(author: subject, title: 'Hello', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
-      Post.create(author: subject, title: 'Hello', text: 'This is my fourth post', comments_counter: 0,
-                  likes_counter: 0)
-      Post.create(author: subject, title: 'Hello', text: 'This is my fifth post', comments_counter: 0, likes_counter: 0)
+      post1 = Post.new(author: subject, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+      post2 = Post.new(author: subject, title: 'Hello', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
+      post3 = Post.new(author: subject, title: 'Hello', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
+      post4 = Post.new(author: subject, title: 'Hello', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
+      post5 = Post.new(author: subject, title: 'Hello', text: 'This is my fifth post', comments_counter: 0, likes_counter: 0)
+      subject.posts = [post1, post2, post3, post4, post5]
 
-      expect(subject.latest_posts[0].text).to eq 'This is my fifth post'
-      expect(subject.latest_posts[1].text).to eq 'This is my fourth post'
-      expect(subject.latest_posts[2].text).to eq 'This is my third post'
+      expect(subject.latest_posts).to eq [post5, post4, post3]
     end
   end
 end

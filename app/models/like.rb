@@ -6,12 +6,4 @@ class Like < ApplicationRecord
     post.likes_counter = post.likes.count
     post.save
   end
-
-  after_create do
-    update_likes_counter
-  end
-
-  after_destroy do
-    update_likes_counter
-  end
 end

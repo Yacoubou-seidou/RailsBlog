@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   let(:first_person) do
-    User.create(
+    User.new(
       name: 'Yacos',
       photo: 'https://drive.google.com/file/d/13-N8SlsasURapsAjgP0D2KTnYtNGBsxO/view?usp=sharing',
       bio: 'Full Stack Web Developer',
@@ -10,7 +10,7 @@ RSpec.describe Comment, type: :model do
     )
   end
 
-  before { first_person.save }
+  before { subject.save }
 
   let(:first_post) do
     Post.new(
@@ -23,7 +23,7 @@ RSpec.describe Comment, type: :model do
   end
 
   subject do
-    Comment.create(
+    Comment.new(
       user: first_person,
       post: first_post,
       text: 'Good one!'
@@ -32,7 +32,7 @@ RSpec.describe Comment, type: :model do
 
   context '#update_comment_counter' do
     it 'should update a post\'s comment counter when a comment is created' do
-      expect { subject }.to change(first_post, :comments_counter).from(0).to(1)
+      expect { subject.update_comment_counter }.to change(first_post, :comments_counter).from(0).to(1)
     end
   end
 end
