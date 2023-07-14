@@ -95,20 +95,17 @@ RSpec.describe Post, type: :model do
 
   context '#most_recent_comments' do
     it 'should return the most recent comments on a post' do
-      Comment.create(post: subject, user: first_person, text: 'Hello')
-      Comment.create(post: subject, user: first_person, text: 'Hi')
-      Comment.create(post: subject, user: first_person, text: 'How are you?')
-      Comment.create(post: subject, user: first_person, text: 'Good job')
-      Comment.create(post: subject, user: first_person, text: 'Nice code')
-      Comment.create(post: subject, user: first_person, text: 'See you!')
-      Comment.create(post: subject, user: first_person, text: 'Happy coding')
-      Comment.create(post: subject, user: first_person, text: 'bye!!!')
+      coment1 = Comment.new(post: subject, user: first_person, text: 'Hello')
+      coment2 = Comment.new(post: subject, user: first_person, text: 'Hi')
+      coment3 = Comment.new(post: subject, user: first_person, text: 'How are you?')
+      coment4 = Comment.new(post: subject, user: first_person, text: 'Good job')
+      coment5 = Comment.new(post: subject, user: first_person, text: 'Nice code')
+      coment6 = Comment.new(post: subject, user: first_person, text: 'See you!')
+      coment7 = Comment.new(post: subject, user: first_person, text: 'Happy coding')
+      coment8 = Comment.new(post: subject, user: first_person, text: 'bye!!!')
+      subject.comments = [coment1, coment2, coment3, coment4, coment5, coment6, coment7, coment8]
 
-      expect(subject.most_recent_comments[0].text).to eq 'Good job'
-      expect(subject.most_recent_comments[1].text).to eq 'Nice code'
-      expect(subject.most_recent_comments[2].text).to eq 'See you!'
-      expect(subject.most_recent_comments[3].text).to eq 'Happy coding'
-      expect(subject.most_recent_comments[4].text).to eq 'bye!!!'
+      expect(subject.most_recent_comments).to eq [coment4, coment5, coment6, coment7, coment8]
     end
   end
 end
