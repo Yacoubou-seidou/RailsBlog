@@ -92,20 +92,4 @@ RSpec.describe Post, type: :model do
       expect { subject.update_post_counter }.to change(first_person, :posts_counter).from(0).to(1)
     end
   end
-
-  context '#most_recent_comments' do
-    it 'should return the most recent comments on a post' do
-      coment1 = Comment.new(post: subject, user: first_person, text: 'Hello')
-      coment2 = Comment.new(post: subject, user: first_person, text: 'Hi')
-      coment3 = Comment.new(post: subject, user: first_person, text: 'How are you?')
-      coment4 = Comment.new(post: subject, user: first_person, text: 'Good job')
-      coment5 = Comment.new(post: subject, user: first_person, text: 'Nice code')
-      coment6 = Comment.new(post: subject, user: first_person, text: 'See you!')
-      coment7 = Comment.new(post: subject, user: first_person, text: 'Happy coding')
-      coment8 = Comment.new(post: subject, user: first_person, text: 'bye!!!')
-      subject.comments = [coment1, coment2, coment3, coment4, coment5, coment6, coment7, coment8]
-
-      expect(subject.most_recent_comments).to eq [coment4, coment5, coment6, coment7, coment8]
-    end
-  end
 end

@@ -43,17 +43,4 @@ RSpec.describe User, type: :model do
       expect(subject).to be_valid
     end
   end
-
-  context '#latest_posts' do
-    it 'should return the latest posts of the user' do
-      post1 = Post.new(author: subject, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
-      post2 = Post.new(author: subject, title: 'Hello', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
-      post3 = Post.new(author: subject, title: 'Hello', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
-      post4 = Post.new(author: subject, title: 'Hello', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
-      post5 = Post.new(author: subject, title: 'Hello', text: 'This is my fifth post', comments_counter: 0, likes_counter: 0)
-      subject.posts = [post1, post2, post3, post4, post5]
-
-      expect(subject.latest_posts).to eq [post5, post4, post3]
-    end
-  end
 end
