@@ -10,7 +10,7 @@ RSpec.describe Comment, type: :model do
     )
   end
 
-  before {first_person.save}
+  before { first_person.save }
 
   let(:first_post) do
     Post.new(

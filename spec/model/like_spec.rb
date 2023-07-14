@@ -19,7 +19,7 @@ RSpec.describe Like, type: :model do
       comments_counter: 0
     )
   end
-before {first_post.save}
+  before { first_post.save }
   subject do
     Like.create(
       user: first_person,

@@ -10,7 +10,7 @@ RSpec.describe Post, type: :model do
     )
   end
 
-  before {first_person.save}
+  before { first_person.save }
 
   let(:subject) do
     Post.create(
