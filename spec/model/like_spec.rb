@@ -9,7 +9,7 @@ RSpec.describe Like, type: :model do
       posts_counter: 0
     )
   end
-  before {subject.save}
+  before { subject.save }
   let(:first_post) do
     Post.new(
       author: first_person,
