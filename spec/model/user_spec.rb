@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
       bio: 'Full Stack Web Developer'
     )
   end
-
+  before {subject.save}
   context '#name' do
     it 'name should be present' do
       subject.name = nil
