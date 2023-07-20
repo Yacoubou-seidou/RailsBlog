@@ -125,8 +125,7 @@ If you like this project, give it a ⭐.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-No acknowledgements.
-
+I would like to thank Microverse for giving me this wonderful opportunity to work on this project.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
