@@ -24,7 +24,7 @@
 
 ## Rails blog application <a name="about-project"></a>
 
-A blog application built with Ruby on Rails.
+A blog application built with Ruby on Rails that allow users to create posts , add comment , and add likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 
