@@ -24,7 +24,7 @@
 
 ## Rails blog application <a name="about-project"></a>
 
-A blog application built with Ruby on Rails.
+A blog application built with Ruby on Rails that allow users to create posts , add comment , and add likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -125,8 +125,7 @@ If you like this project, give it a ⭐.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-No acknowledgements.
-
+I would like to thank Microverse for giving me this wonderful opportunity to work on this project.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
