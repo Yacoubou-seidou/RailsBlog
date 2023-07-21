@@ -30,7 +30,7 @@ RSpec.describe '/users/posts', type: :request do
       get "/users/#{person.id}/posts"
       expect(response.status).to eq 200
       expect(response).to render_template 'posts/index'
-      expect(response.body).to include('All User Posts')
+      expect(response.body).to include  first_post.text
     end
   end
 
@@ -39,7 +39,8 @@ RSpec.describe '/users/posts', type: :request do
       get "/users/#{person.id}/posts/#{first_post.id}"
       expect(response.status).to eq 200
       expect(response).to render_template 'posts/show'
-      expect(response.body).to include('A user post')
+      expect(response.body).to include first_post.title
+      expect(response.body).to include first_post.text
     end
   end
 end

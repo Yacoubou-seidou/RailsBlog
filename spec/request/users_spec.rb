@@ -19,7 +19,7 @@ RSpec.describe '/users', type: :request do
       get '/users'
       expect(response.status).to eq 200
       expect(response).to render_template 'users/index'
-      expect(response.body).to include('All Users')
+      expect(response.body).to include person.name
     end
   end
 
@@ -29,7 +29,9 @@ RSpec.describe '/users', type: :request do
       expect(response.status).to eq 200
       expect(response).to render_template 'users/show'
 
-      expect(response.body).to include('A User')
+      expect(response.body).to include person.name
+      expect(response.body).to include person.bio
+      expect(response.body).to include person.photo
     end
   end
 end
