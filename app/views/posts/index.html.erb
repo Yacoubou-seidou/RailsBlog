@@ -24,7 +24,7 @@
         </div>
         </div>
         <ul class="post-comments">
-          <% post.comments.each do |comment| %>
+          <% post.most_recent_comments.each do |comment| %>
             <li>
               <h4><%= comment.user.name %>:</h4>
               <p><%= comment.text[0..100]... %></p>
