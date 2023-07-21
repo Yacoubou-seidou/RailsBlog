@@ -10,7 +10,7 @@
   </div>
   <ul class="posts-comments">
   <%= 'No comments yet!' if @post.comments.empty? %>
-    <% @post.comments.each do |comment| %>
+    <% @post.most_recent_comments.each do |comment| %>
       <li>
         <p>
           <%= comment.user.name %>: <%= comment.text %>
