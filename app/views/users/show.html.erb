@@ -1,3 +1,33 @@
-<div class="show-page">
-    <h2>A User</h2>
+<div class="index-page">
+  <div class="user-tile card">
+    <img class="user-image" src=<%= @user.photo %> />
+    <div class="user-info">
+      <h2 class="user-name"><%= @user.name %></h2>
+      <p>
+        Number of <%= @user.posts_counter == 1 ? 'Post' : 'Posts' %>
+        <%= @user.posts_counter %>
+      </p>
+    </div>
+  </div>
+  <div class="user-bio card">
+    <h3>Bio</h3>
+    <p>
+      <%= @user.bio %>
+    </p>
+  </div>
+  <ul class="user-posts card">
+    <% @user.latest_posts.each do |post| %>
+      <li>
+        <%= link_to post.title, user_post_path(user_id: @user.id, id:post.id) %>
+        <p>
+          <%= sanitize post.text %>...
+        </p>
+        <div class="post-interactions">
+          Comments: <%= post.comments_counter %>,
+          Likes: <%= post.likes_counter %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= button_to 'See all Posts', user_posts_path(user_id:@user.id), method: :get, class: "all-posts-btn" %>
 </div>

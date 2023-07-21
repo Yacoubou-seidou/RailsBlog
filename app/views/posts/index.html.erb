@@ -1,3 +1,40 @@
-<div class="index-allPosts-page">
-    <h2>All User Posts</h2>
+<div class="index-page">
+  <div class="user-tile card">
+    <img class="user-image" src=<%= @user.photo %> />
+    <div class="user-info">
+      <h2 class="user-name"><%= @user.name %></h2>
+      <p>
+        Number of <%= @user.posts_counter == 1 ? 'Post' : 'Posts' %>
+        <%= @user.posts_counter %>
+      </p>
+    </div>
+  </div>
+
+  <ul class="user-posts-display">
+    <% @posts.each do |post| %>
+      <li>
+      <div class='post-list'>
+          <%= link_to post.title, user_post_path(user_id: @user.id, id:post.id) %>
+        <p>
+          <%= sanitize post.text[0..200].gsub("\n", '<br />') %>...
+        </p>
+        <div class="post-interactions">
+          Comments: <%= post.comments_counter %>,
+          Likes: <%= post.likes_counter %>
+        </div>
+        </div>
+        <ul class="post-comments">
+          <% post.comments.each do |comment| %>
+            <li>
+              <h4><%= comment.user.name %>:</h4>
+              <p><%= comment.text[0..100]... %></p>
+            </li>
+          <% end %>
+        </ul>
+        <%= 'No comments yet!' if post.comments.empty? %>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= 'This user has no Posts yet!' if @user.posts.empty? %>
 </div>
