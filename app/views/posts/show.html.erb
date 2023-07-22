@@ -7,6 +7,11 @@
 
         </div>
     <%= sanitize @post.text.gsub("\n", '<br />') %>
+  <div class="like-comment_buttons">
+  <%= form_with url: user_post_likes_path(@post.author, @post) do |form| %>
+    <%= form.submit 'Like', class: 'like_button' %>
+  <% end %>
+  </div>
   </div>
   <ul class="posts-comments">
   <%= 'No comments yet!' if @post.comments.empty? %>
@@ -18,4 +23,5 @@
       </li>
     <% end %>
   </ul>
+  <div><%= link_to "Add Comment", new_user_post_comment_path(@post.author.id, @post.id) %></div>
 </div>

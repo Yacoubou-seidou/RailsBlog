@@ -145,3 +145,15 @@ form {
 .posts-comments p {
   margin-top: 0;
 }
+
+.form_container,
+.comment_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form_input {
+  margin-top: 10px;
+}

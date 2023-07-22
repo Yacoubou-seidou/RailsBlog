@@ -30,4 +30,7 @@
     <% end %>
   </ul>
   <%= button_to 'See all Posts', user_posts_path(user_id:@user.id), method: :get, class: "all-posts-btn" %>
+  <button class="new-post">
+    <%= link_to "Add a new post", new_user_post_path(@user) %>
+  </button>
 </div>
