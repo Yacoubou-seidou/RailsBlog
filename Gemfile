@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.4'
 
+gem 'bootstrap_form'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'rails-controller-testing'
