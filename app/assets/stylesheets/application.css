@@ -146,7 +146,8 @@ form {
   margin-top: 0;
 }
 
-.form_container {
+.form_container,
+.comment_form {
   display: flex;
   justify-content: center;
   align-items: center;
