@@ -1,3 +1,15 @@
 <div class="index-page">
-    <h2>All Users</h2>
+  <ul class="user-list card">
+    <% @users.each do |user| %>
+      <%= link_to user_path id:user.id do %>
+        <li class="user-tile">
+          <img class="user-image" src=<%= user.photo %> />
+          <div class="user-info">
+            <h3 class="user-name"><%= user.name %></h3>
+            <p>Number of posts: <%= user.posts_counter %></p>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>

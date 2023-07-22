@@ -13,3 +13,135 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+}
+
+.index-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.user-image {
+  width: 20%;
+  height: 78px;
+  border: 2px solid black;
+}
+
+.user-list {
+  width: 511px;
+  height: 80px;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.user-tile {
+  display: flex;
+  width: 511px;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-name {
+  width: 80%;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.user-info {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+}
+
+.user-info p {
+  width: 80%;
+  margin-top: 0;
+  text-align: right;
+  color: black;
+}
+
+.user-info,
+.user-name {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.user-bio {
+  width: 511px;
+  margin-top: 10px;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.user-posts li,
+.post-comments li,
+.post-list {
+  border: 2px solid black;
+  margin-top: 10px;
+  list-style-type: none;
+  padding: 5px;
+  width: 511px;
+}
+
+.user-posts-display li {
+  margin-top: 10px;
+  list-style-type: none;
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 511px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.post-interactions {
+  text-align: right;
+  font-size: 12px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-posts-display {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-body,
+.posts-comments {
+  width: 511px;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.posts-comments li {
+  list-style-type: none;
+}
+
+.flexing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.posts-comments p {
+  margin-top: 0;
+}

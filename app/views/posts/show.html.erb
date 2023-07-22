@@ -1,3 +1,21 @@
-<div class="show-post-page">
-    <h2>A user post</h2>
+<div class="index-page">
+  <div class="post-body">
+        <div class='flexing'>
+        <p><%= @post.title %> by <%= @user.name %></p>
+        <p class="post-interactions">          Comments: <%= @post.comments_counter %>,
+          Likes: <%= @post.likes_counter %></p>
+
+        </div>
+    <%= sanitize @post.text.gsub("\n", '<br />') %>
+  </div>
+  <ul class="posts-comments">
+  <%= 'No comments yet!' if @post.comments.empty? %>
+    <% @post.comments.each do |comment| %>
+      <li>
+        <p>
+          <%= comment.user.name %>: <%= comment.text %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
 </div>
