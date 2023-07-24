@@ -4,7 +4,7 @@
     <div class="user-info">
       <h2 class="user-name"><%= @user.name %></h2>
       <p>
-        Number of <%= @user.posts_counter == 1 ? 'Post' : 'Posts' %>
+        Number of <%= @user.posts_counter%>
         <%= @user.posts_counter %>
       </p>
     </div>
@@ -35,6 +35,6 @@
       </li>
     <% end %>
   </ul>
-
+  <%= will_paginate @posts %>
   <%= 'This user has no Posts yet!' if @user.posts.empty? %>
 </div>

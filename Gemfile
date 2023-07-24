@@ -4,16 +4,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.4'
 
 gem 'bootstrap_form'
+gem 'will_paginate'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
-
-gem 'rails-controller-testing'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main" 3.1.4,3.0.2
 gem 'rails', '~> 7.0.6'
 # rspec
-group :development, :test do
+group :test do
+  # The RSpec testing framework
+  gem 'capybara'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -71,11 +75,4 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-end
-
-group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
