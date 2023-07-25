@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
 
@@ -17,6 +17,6 @@ class Post < ApplicationRecord
   end
 
   def most_recent_comments
-    comments.last(5)
+    comments.includes(:user).last(5)
   end
 end
