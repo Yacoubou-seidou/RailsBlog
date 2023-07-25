@@ -100,6 +100,11 @@ rails server
 - GitHub: [@Yacos](https://github.com/yacoubou-seidou)
 - LinkedIn: [@Yacos](https://www.linkedin.com/in/yacoubou-seidou-chaibou)
 
+👤 **Mursedul Islam Sumon**
+
+- GitHub: [@sumon](https://github.com/sumon766)
+- LinkedIn: [@sumon](https://www.linkedin.com/in/sumon766)
+
 ## 🔭 Future Features <a name="future-features"></a>
 
 - More interactive design
