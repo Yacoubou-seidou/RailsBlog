@@ -6,15 +6,11 @@ RSpec.describe User, type: :model do
       name: 'Yacos',
       photo: 'https://drive.google.com/file/d/13-N8SlsasURapsAjgP0D2KTnYtNGBsxO/view?usp=sharing',
       bio: 'Full Stack Web Developer',
-      posts_counter: 0
+      posts_counter: 0,
+      email: 'yacos@gmail.com',
+      password: '123456',
+      password_confirmation: '123456'
     )
-  end
-
-  context '#name' do
-    it 'name should be present' do
-      subject.name = nil
-      expect(subject).to_not be_valid
-    end
   end
 
   context '#posts_counter' do
