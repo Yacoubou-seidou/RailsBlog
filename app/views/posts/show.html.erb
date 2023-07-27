@@ -1,0 +1,36 @@
+<div class="index-page">
+  <div class="post-body">
+        <div class='flexing'>
+        <p><%= @post.title %> by <%= @user.name %></p>
+        <p class="post-interactions">          Comments: <%= @post.comments_counter %>,
+          Likes: <%= @post.likes_counter %></p>
+        </div>
+    <%= sanitize @post.text.gsub("\n", '<br />') %>
+  <div class="like-comment_buttons">
+  <%= form_with url: user_post_likes_path(@post.author, @post) do |form| %>
+    <%= form.submit 'Like', class: 'like_button' %>
+  <% end %>
+  </div>
+    <% if can? :destroy, @post %>
+      <%= button_to user_post_path(id: @post.id, user_id: params[:user_id]), data: { confirm: "Delete this Post?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'delete-post-btn' do %>
+        Delete
+      <% end %>
+    <% end %>
+  </div>
+  <ul class="posts-comments">
+  <%= 'No comments yet!' if @post.comments.empty? %>
+    <% @post.comments.each do |comment| %>
+      <li>
+        <p>
+          <%= comment.user.name %>: <%= comment.text %>
+        </p>
+            <% if can? :destroy, comment %>
+              <%= button_to user_post_comment_path(post_id: @post.id, id: comment.id), data: { confirm: "Delete this comment?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'delete-comment-btn' do %>
+                Delete
+              <% end %>
+            <% end %>
+      </li>
+    <% end %>
+  </ul>
+  <div><%= link_to "Add Comment", new_user_post_comment_path(@post.author.id, @post.id) %></div>
+</div>
