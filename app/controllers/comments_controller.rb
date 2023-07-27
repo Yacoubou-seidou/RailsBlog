@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @comments = Comment.includes(:user)
   end
@@ -9,6 +11,11 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:text)
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_to request.referrer, notice: 'Your comment was successfully deleted!'
   end
 
   def create
