@@ -18,6 +18,13 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .index-page {
   display: flex;
   justify-content: center;
@@ -156,4 +163,51 @@ form {
 
 .form_input {
   margin-top: 10px;
+}
+
+.sign_in,
+.new_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sign_in a {
+  width: 25%;
+  background-color: aqua;
+  text-align: center;
+}
+
+.field {
+  width: 100%;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.field input {
+  width: 100%;
+}
+
+.current-user-image {
+  width: 20%;
+}
+
+.current-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-panel button {
+  margin-bottom: 20px;
+  width: 100%;
 }

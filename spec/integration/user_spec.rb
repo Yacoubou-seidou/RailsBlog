@@ -6,7 +6,10 @@ RSpec.describe User, type: :system do
       name: 'Seidou',
       photo: 'https://drive.google.com/file/d/13-N8SlsasURapsAjgP0D2KTnYtNGBsxO/view?usp=sharing',
       bio: 'Full Stack Web Developer',
-      posts_counter: 0
+      posts_counter: 0,
+      email: 'seidou@gmail.com',
+      password: '123456',
+      password_confirmation: '123456'
     )
   end
 
@@ -15,7 +18,10 @@ RSpec.describe User, type: :system do
       name: 'Ali',
       photo: 'https://drive.google.com/file/d/13-N8SlsasURapsAjgP0D2KTnYtNGBsxO/view?usp=sharing',
       bio: 'Junior developer',
-      posts_counter: 0
+      posts_counter: 0,
+      email: 'ali@gmail.com',
+      password: '123456',
+      password_confirmation: '123456'
     )
   end
 
