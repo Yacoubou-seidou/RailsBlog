@@ -28,6 +28,11 @@
             <li>
               <h4><%= comment.user.name %>:</h4>
               <p><%= comment.text[0..100]... %></p>
+                         <% if can? :destroy, comment %>
+              <%= button_to user_post_comment_path(post_id: post.id, id: comment.id), data: { confirm: "Delete this comment?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'delete-comment-btn' do %>
+                Delete
+              <% end %>
+            <% end %>
             </li>
           <% end %>
         </ul>
