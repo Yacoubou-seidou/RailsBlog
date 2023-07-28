@@ -81,3 +81,4 @@ gem 'cancancan'
 gem 'font-awesome-sass'
 
 gem 'active_model_serializers', '~> 0.10.13'
+gem 'rswag'
